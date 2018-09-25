@@ -34,25 +34,48 @@ import React from 'react';
 //}
 
 const App = () => {
+  const profiles = [{
+      name: "Taro",
+      age: 10
+    },
+    {
+      name: "Hanako",
+      age: 5
+    },
+    {
+      name: "NoName"
+    }
+  ]
   return ( <
-    div >
-    <
-    Cat / >
-    <
-    Cat / >
-    <
-    Cat / >
-    <
-    Cat / >
-    <
+    div > {
+      profiles.map((profile, index) => {
+        return <User name = {
+          profile.name
+        }
+        age = {
+          profile.age
+        }
+        key = {
+          index
+        }
+        />
+      })
+    } <
     /div>
   )
 }
 
-//関数コンポーネント
-const Cat = () => {
-  return <div > Animal! < /div>
+const User = (props) => {
+  return <div > Hi, I am {
+    props.name
+  }, and {
+    props.age
+  }
+  yeard old! < /div>
 }
 
+User.defaultProps = {
+  age: 1
+}
 
 export default App;
