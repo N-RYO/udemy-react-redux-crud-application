@@ -1,5 +1,4 @@
 //import React, { Component } from 'react';
-import React from 'react';
 
 //class App extends Component {
 //  render() {
@@ -33,6 +32,10 @@ import React from 'react';
 //  }
 //}
 
+import React from 'react';
+import PropTypes from 'prop-types';
+
+
 const App = () => {
   const profiles = [{
       name: "Taro",
@@ -43,7 +46,8 @@ const App = () => {
       age: 5
     },
     {
-      name: "NoName"
+      name: "NoName",
+      age: 3
     }
   ]
   return ( <
@@ -74,8 +78,9 @@ const User = (props) => {
   yeard old! < /div>
 }
 
-User.defaultProps = {
-  age: 1
+User.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired
 }
 
 export default App;
