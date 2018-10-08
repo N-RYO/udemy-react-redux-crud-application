@@ -33,26 +33,19 @@ import React from 'react';
 //  }
 //}
 
-const App = () => {
-  return ( <
-    div >
-    <
-    Cat / >
-    <
-    Cat / >
-    <
-    Cat / >
-    <
-    Cat / >
-    <
-    /div>
+const App = () =>  {
+  return (
+    <div>
+      <Cat />
+      <Cat />
+      <Cat />
+      <Cat />
+    </div>
   )
 }
 
-//関数コンポーネント
 const Cat = () => {
-  return <div > Animal! < /div>
+  return <div>Meow!</div>
 }
-
 
 export default App;
