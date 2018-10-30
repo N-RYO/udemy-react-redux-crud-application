@@ -32,12 +32,14 @@ class EventsNew extends Component {
 
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
-        <div><Field label="Title" name="title" type="text" component={this.renderField} /></div>
-        <div><Field label="Body" name="body" type="text" component={this.renderField} /></div>
-
         <div>
-          <input type="submit" value="Submit" disabled={pristine || submitting} />
-          <Link to="/" >Cancel</Link>
+          <div><Field table="Title" name="title" type="text" component={this.renderField} /></div>
+          <div><Field table="Body" name="body" type="text" component={this.renderField} /></div>
+
+          <div>
+            <input type="submit" value="Submit" disabled={pristine || submitting} />
+            <Link to="/" >Cancel</Link>
+          </div>
         </div>
       </form>
     )
@@ -52,9 +54,8 @@ const validate = values => {
 
   return errors
 }
-
 const mapDispatchToProps = ({ postEvent })
 
 export default connect(null, mapDispatchToProps)(
-  reduxForm({ validate, form: 'eventNewForm' })(EventsNew)
+  reduxForm({ validate, form: 'eventNewform' })(EventsNew)
 )
